@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: #111;
+}
+
+header {
+  display: flex;
+}
+
+.right {
+  flex-grow: 1;
+  height: 100vh;
+  min-width: 50vw;
+  background: url(images/head.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center;
+}
+
+.flexwrap {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 475px;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 15vw;
+  background: url(images/head.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: right;
+}
+
+@media screen and (min-width: 950px) {
+  h1 {
+    font-size: 14rem;
+  }
+}
