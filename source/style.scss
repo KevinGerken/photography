@@ -1,3 +1,15 @@
+$cp1: polygon(5% 0%, 100% 5%, 100% 95%, 0% 95%);
+$cp2: polygon(0% 5%, 95% 3%, 97% 97%, 2% 97%);
+$cp3: polygon(2% 2%, 98% 3%, 100% 96%, 0% 97%);
+$cp4: polygon(3% 0%, 100% 0%, 98% 95%, 2% 95%);
+
+$tan: #877667;
+$tan-dark: #4A3524;
+$tan-light: #DACBBF;
+$blue: #3E5151;
+$blue-dark: #162D2D;
+$blue-light: #738383;
+
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +20,12 @@ html {
 }
 
 body {
-  background: #111;
+  background: $blue-dark;
 }
 
 header {
   display: flex;
+  min-height: 70vw;
 }
 
 .right {
@@ -40,10 +53,144 @@ h1 {
   background-attachment: fixed;
   background-size: cover;
   background-position: top center;
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
   text-align: right;
+}
+
+section {
+  background: $tan-dark;
+  color: $blue-light;
+}
+
+.vert {
+  writing-mode: vertical-lr;
+}
+
+h2 {
+  color: $blue-light;
+  font-size: 7rem;
+}
+
+.left {
+  display: inline-block;
+  float: left;
+}
+
+p {
+  font-size: 2rem;
+  color: $tan-light;
+}
+
+section img {
+  width: 30vw;
+  float: right;
+  shape-outside: url(images/elsa.png);
+}
+
+article {
+  display: grid;
+  grid: auto / repeat(8, 1fr); 
+  grid-gap: 1vw;
+  grid-auto-flow: dense;
+  padding: 5vw 1vw;
+  background: $blue;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, $tan-light, $blue);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, $tan-light, $blue); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+h3{
+  color: $tan-light;
+  font-size: 10vw;
+  text-align: center;
+  grid-column: 8;
+  grid-row: 3 / span 6;
+  transition: opacity .5s;
+}
+
+.reg {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.large {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+.xl {
+  grid-column: span 4;
+  grid-row: span 4;
+}
+
+img {
+  width: 100%;
+  transition: opacity 1s;
+}
+
+.img1{
+  clip-path: $cp1;
+}
+
+.img2{
+  clip-path: $cp2;
+}
+
+.img3{
+  clip-path: $cp3;
+}
+
+.img4{
+  clip-path: $cp4;
+}
+
+.img5{
+  clip-path: $cp1;
+}
+
+.img6{
+  clip-path: $cp2;
+}
+
+.img7{
+  clip-path: $cp3;
+}
+
+.img8{
+  clip-path: $cp4;
+}
+
+.img9{
+  clip-path: $cp1;
+}
+
+.img10{
+  clip-path: $cp2;
+}
+
+.img11{
+  clip-path: $cp3;
+}
+
+.img12{
+  clip-path: $cp4;
+}
+
+.img13{
+  clip-path: $cp3;
+}
+
+.img14{
+  clip-path: $cp4;
+}
+
+
+@supports (display: grid) {
+  img {
+    margin: 0;    
+  }
 }
 
 @media screen and (min-width: 950px) {
