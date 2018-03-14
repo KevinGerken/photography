@@ -21,11 +21,11 @@ html {
 
 body {
   background: $blue-dark;
+  z-index: 2;
 }
 
 header {
   display: flex;
-  min-height: 70vw;
 }
 
 .right {
@@ -60,9 +60,38 @@ h1 {
   text-align: right;
 }
 
+.popup {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .9);
+  z-index: 1;
+}
+
+.popup-image {
+  align-self: center;
+  flex: 0 0 auto;
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  clip-path: $cp2;
+}
+
+.hidden {
+  display: none;
+}
+
 section {
   background: $tan-dark;
   color: $blue-light;
+  max-width: 75rem;
+  margin: auto;
+  padding: 2rem;
 }
 
 .vert {
@@ -85,7 +114,7 @@ p {
 }
 
 section img {
-  width: 30vw;
+  width: 22rem;
   float: right;
   shape-outside: url(images/elsa.png);
 }
@@ -99,6 +128,12 @@ article {
   background: $blue;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, $tan-light, $blue);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, $tan-light, $blue); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  h2 {
+    grid-column: 1 / span 8;
+    text-align: center;
+    color: $tan-light;
+  }
 }
 
 h3{
@@ -106,7 +141,7 @@ h3{
   font-size: 10vw;
   text-align: center;
   grid-column: 8;
-  grid-row: 3 / span 6;
+  grid-row: 4 / span 6;
   transition: opacity .5s;
 }
 
@@ -186,10 +221,26 @@ img {
   clip-path: $cp4;
 }
 
+nav {
+  grid-column: span 8;
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
 
-@supports (display: grid) {
-  img {
-    margin: 0;    
+button {
+  height: 3rem;
+  width: 10rem;
+  font-size: 2rem;
+  padding: .3rem;
+  margin: .5rem;
+  background: $blue-dark;
+  color: $tan-light;
+  border-radius: 15px;
+  border: none;
+  &:hover {
+    background: $blue;
   }
 }
 
