@@ -1,6 +1,27 @@
 * {
   margin: 0;
   padding: 0; }
+  *:focus {
+    outline: none; }
+  *:active {
+    outline: none; }
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none; }
+  button ::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
 
 html {
   font-size: 62.5%; }
@@ -15,7 +36,6 @@ header {
 .right {
   flex-grow: 1;
   height: 100vh;
-  min-width: 50vw;
   background: url(images/head.jpg);
   background-attachment: fixed;
   background-size: cover;
@@ -26,24 +46,26 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 475px;
+  max-width: 60vh;
   height: 100vh; }
 
 h1 {
-  font-size: 15vw;
+  font-size: 19vh;
   background: url(images/head.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-position: top center;
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-fill-color: transparent;
+  -webkit-text-stroke: 2px #162D2D;
   text-align: right; }
 
 .popup {
   position: fixed;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   height: 100vh;
   width: 100vw;
@@ -51,6 +73,20 @@ h1 {
   top: 0;
   background: rgba(0, 0, 0, 0.9);
   z-index: 1; }
+  .popup .close {
+    color: #777;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    font-size: 5rem;
+    cursor: pointer; }
+  .popup button:hover, .popup button:focus {
+    color: #fff; }
+
+.image-flex-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around; }
 
 .popup-image {
   align-self: center;
@@ -61,8 +97,39 @@ h1 {
   height: auto;
   clip-path: polygon(0% 5%, 95% 3%, 97% 97%, 2% 97%); }
 
-.hidden {
-  display: none; }
+.controls-flex-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around; }
+
+.arrows {
+  color: #777;
+  font-size: 10vh;
+  align-self: center;
+  cursor: pointer; }
+
+.arrow-left {
+  transform: rotate(180deg); }
+
+.stop-button {
+  height: 10vh;
+  width: 10vh;
+  background-color: #777;
+  align-self: center;
+  cursor: pointer; }
+  .stop-button:hover, .stop-button:focus {
+    background-color: #fff; }
+
+.play-button {
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0);
+  border-style: solid;
+  border-width: 5vh 0vh 5vh 10vh;
+  border-color: transparent transparent transparent #777;
+  cursor: pointer; }
+  .play-button:hover, .play-button:focus {
+    border-color: transparent transparent transparent #fff;
+    background-color: rgba(0, 0, 0, 0); }
 
 section {
   background: #4A3524;
@@ -107,26 +174,35 @@ article {
     grid-column: 1 / span 8;
     text-align: center;
     color: #DACBBF; }
+  article img {
+    cursor: pointer; }
 
 h3 {
   color: #DACBBF;
   font-size: 10vw;
   text-align: center;
   grid-column: 8;
-  grid-row: 4 / span 6;
+  grid-row: 2 / span 6;
   transition: opacity .5s; }
 
-.reg {
+a:hover, a:focus {
+  opacity: .8; }
+
+.sm {
   grid-column: span 2;
   grid-row: span 2; }
 
-.large {
+.reg {
   grid-column: span 3;
   grid-row: span 3; }
 
-.xl {
+.large {
   grid-column: span 4;
   grid-row: span 4; }
+
+.xl {
+  grid-column: span 5;
+  grid-row: span 5; }
 
 img {
   width: 100%;
@@ -181,21 +257,37 @@ nav {
   align-content: space-around;
   flex-wrap: wrap; }
 
-button {
-  height: 3rem;
-  width: 10rem;
+.btn {
+  height: 4rem;
+  width: 11rem;
   font-size: 2rem;
-  padding: .3rem;
   margin: .5rem;
   background: #162D2D;
   color: #DACBBF;
   border-radius: 15px;
-  border: none; }
-  button:hover {
+  border: 3px solid #DACBBF;
+  cursor: pointer; }
+  .btn:hover, .btn:focus {
     background: #3E5151; }
 
-@media screen and (min-width: 950px) {
-  h1 {
-    font-size: 14rem; } }
+.hidden {
+  display: none; }
+
+@media screen and (min-width: 750px) {
+  .sm {
+    grid-column: span 1;
+    grid-row: span 1; }
+
+  .reg {
+    grid-column: span 2;
+    grid-row: span 2; }
+
+  .large {
+    grid-column: span 3;
+    grid-row: span 3; }
+
+  .xl {
+    grid-column: span 4;
+    grid-row: span 4; } }
 
 /*# sourceMappingURL=style.css.map */

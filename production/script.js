@@ -1,11 +1,16 @@
-const images = document.querySelectorAll(`article img`);
-const galleryName = document.querySelector(`article h3`);
-const weddingsButton = document.querySelector(`.weddings`);
-const seniorsButton = document.querySelector(`.seniors`);
-const babiesButton = document.querySelector(`.babies`);
-const familiesButton = document.querySelector(`.families`);
-const popupImage = document.querySelector(`.popup-image`);
-const popup = document.querySelector(`.popup`);
+const imageLinks = document.querySelectorAll(`article a`),
+      images = document.querySelectorAll(`article a img`),
+      galleryName = document.querySelector(`article h3`),
+      weddingsButton = document.querySelector(`.weddings`),
+      seniorsButton = document.querySelector(`.seniors`),
+      babiesButton = document.querySelector(`.babies`),
+      familiesButton = document.querySelector(`.families`),
+      popupImage = document.querySelector(`.popup-image`),
+      popup = document.querySelector(`.popup`),
+      stopButton = document.querySelector(`.stop-button`),
+      leftArrow = document.querySelector(`.arrow-left`),
+      rightArrow = document.querySelector(`.arrow-right`),
+      x = document.querySelector(`.close`);
 let slideshowIntervalID;
 
 function fadeOut() {
@@ -31,8 +36,10 @@ function fadeIn() {
 function loadGallery(startingPic) {
   for(let i = 0; i < images.length; i++) {
     if(i+startingPic > 9) {
+      imageLinks[i].href = `images/${i + startingPic}.jpg`;
       images[i].src = `images/${i + startingPic}.jpg`; 
     } else {
+      imageLinks[i].href = `images/0${i + startingPic}.jpg`;
       images[i].src = `images/0${i + startingPic}.jpg`;
     }
   }
@@ -63,15 +70,31 @@ familiesButton.addEventListener(`click`, ()=> {
   changeGallery(43, `Families`);
 });
 
-for(image of images) {
-  image.addEventListener(`click`, function() {
-    popupImage.src = `images/${this.src.slice(-6)}`;
+for(image of imageLinks) {
+  image.addEventListener(`click`, function(event) {
+    event.preventDefault();
+    console.log(this.childNodes);
+    popupImage.src = `images/${this.childNodes[1].src.slice(-6)}`;
     popup.classList.remove(`hidden`);
+    x.focus();
   });
 }
 
-popup.addEventListener(`click`, ()=> {
+x.addEventListener(`click`, ()=> {
   popup.classList.add(`hidden`);
+  stopSlideshow();
+  stopButton.classList.add(`play-button`);
+});
+
+leftArrow.addEventListener(`click`, slideBackward);
+rightArrow.addEventListener(`click`, slideForward);
+stopButton.addEventListener(`click`, function() {
+  stopButton.classList.toggle(`play-button`);
+  if(stopButton.classList.contains(`play-button`)) {
+    stopSlideshow();
+  } else {
+    slideshow();
+  }
 });
 
 function slideForward() {

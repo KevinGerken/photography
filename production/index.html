@@ -5,6 +5,7 @@
   <title>
     Elsa Jones Photography
   </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -16,7 +17,15 @@
     <div class="right"></div>
   </header>
   <div class="hidden popup">
-    <img class="popup-image" src="">
+    <button class="close">X</button>
+    <div class="image-flex-container">
+      <img class="popup-image" src="">
+    </div>
+    <div class="controls-flex-container">
+      <button class="arrow-left arrows">&#9655;</button> 
+      <button class="stop-button play-button"></button>
+      <button class="arrow-right arrows">&#9655;</button>
+    </div>
   </div>
   <main>
     <section>
@@ -37,35 +46,68 @@
     <article>
       <h2>Galleries</h2>
       <h3 class="vert">Weddings</h3>
-      <img src="images/01.jpg" alt="a wedding photo" class="img1 xl">
-      <img src="images/02.jpg" alt="a wedding photo" class="img2 reg">
-      <img src="images/03.jpg" alt="a wedding photo" class="img3 large">
-      <img src="images/04.jpg" alt="a wedding photo" class="img4 reg">
-      <img src="images/05.jpg" alt="a wedding photo" class="img5 reg">
-      <img src="images/06.jpg" alt="a wedding photo" class="img6 reg">
-      <img src="images/07.jpg" alt="a wedding photo" class="img7 large">
-      <img src="images/08.jpg" alt="a wedding photo" class="img8 reg">
-      <img src="images/09.jpg" alt="a wedding photo" class="img9 large">
-      <img src="images/10.jpg" alt="a wedding photo" class="img10 reg">
-      <img src="images/11.jpg" alt="a wedding photo" class="img11 reg">
-      <img src="images/12.jpg" alt="a wedding photo" class="img12 large">
-      <img src="images/13.jpg" alt="a wedding photo" class="img13">
-      <img src="images/14.jpg" alt="a wedding photo" class="img14">
+      <a href="images/01.jpg" class="large">
+        <img src="images/01.jpg" alt="a wedding photo" class="img1">
+      </a>
+      <a href="images/02.jpg" class="reg">
+        <img src="images/02.jpg" alt="a wedding photo" class="img2">
+      </a> 
+      <a href="images/03.jpg" class="reg">
+        <img src="images/03.jpg" alt="a wedding photo" class="img3">
+      </a> 
+      <a href="images/04.jpg" class="large">
+        <img src="images/04.jpg" alt="a wedding photo" class="img4">
+      </a> 
+      <a href="images/05.jpg" class="reg">
+        <img src="images/05.jpg" alt="a wedding photo" class="img5">
+      </a> 
+      <a href="images/06.jpg" class="large">
+        <img src="images/06.jpg" alt="a wedding photo" class="img6">
+      </a> 
+      <a href="images/01.jpg" class="reg">
+        <img src="images/07.jpg" alt="a wedding photo" class="img7">
+      </a> 
+      <a href="images/01.jpg" class="reg">
+        <img src="images/08.jpg" alt="a wedding photo" class="img8">
+      </a> 
+      <a href="images/01.jpg" class="large">
+        <img src="images/09.jpg" alt="a wedding photo" class="img9">
+      </a> 
+      <a href="images/01.jpg" class="reg">
+        <img src="images/10.jpg" alt="a wedding photo" class="img10">
+      </a> 
+      <a href="images/01.jpg" class="reg">
+        <img src="images/11.jpg" alt="a wedding photo" class="img11">
+      </a>   
+      <a href="images/01.jpg" class="sm">
+        <img src="images/12.jpg" alt="a wedding photo" class="img12">
+      </a> 
+      <a href="images/01.jpg" class="sm">
+        <img src="images/13.jpg" alt="a wedding photo" class="img13">
+      </a> 
+      <a href="images/01.jpg" class="sm">
+        <img src="images/14.jpg" alt="a wedding photo" class="img14">
+      </a> 
       <nav>
-        <button class="weddings">
+        <button class="weddings btn">
           Weddings
         </button>
-        <button class="seniors">
+        <button class="seniors btn">
           Seniors
         </button>
-        <button class="babies">
+        <button class="babies btn">
           Babies
         </button>
-        <button class="families">
+        <button class="families btn">
           Families
         </button>
       </nav>
     </article>
+    <div>
+      <h2>
+        Contact
+      </h2>
+    </div>
   </main>
 </body>
 </html>
