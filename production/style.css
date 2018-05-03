@@ -27,10 +27,12 @@ html {
   font-size: 62.5%; }
 
 body {
+  font-family: 'Raleway', sans-serif;
   background: #162D2D;
   z-index: 2; }
 
 header {
+  font-family: 'Permanent Marker', cursive;
   display: flex; }
 
 .right {
@@ -50,7 +52,7 @@ header {
   height: 100vh; }
 
 h1 {
-  font-size: 19vh;
+  font-size: 18vh;
   background: url(images/head.jpg);
   background-attachment: fixed;
   background-size: cover;
@@ -174,8 +176,6 @@ article {
     grid-column: 1 / span 8;
     text-align: center;
     color: #DACBBF; }
-  article img {
-    cursor: pointer; }
 
 h3 {
   color: #DACBBF;
@@ -186,7 +186,7 @@ h3 {
   transition: opacity .5s; }
 
 a:hover, a:focus {
-  opacity: .8; }
+  opacity: .6; }
 
 .sm {
   grid-column: span 2;
