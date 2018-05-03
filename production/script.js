@@ -1,6 +1,6 @@
-const imageLinks = document.querySelectorAll(`article a`),
-      images = document.querySelectorAll(`article a img`),
-      galleryName = document.querySelector(`article h3`),
+const imageLinks = document.querySelectorAll(`.galleries a`),
+      images = document.querySelectorAll(`.galleries a img`),
+      galleryName = document.querySelector(`.galleries h3`),
       weddingsButton = document.querySelector(`.weddings`),
       seniorsButton = document.querySelector(`.seniors`),
       babiesButton = document.querySelector(`.babies`),
@@ -146,7 +146,6 @@ x.addEventListener(`click`, ()=> {
   stopSlideshow();
   stopButton.classList.add(`play-button`);
 });
-
 leftArrow.addEventListener(`click`, slideBackward);
 rightArrow.addEventListener(`click`, slideForward);
 stopButton.addEventListener(`click`, function() {

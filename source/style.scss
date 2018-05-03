@@ -12,17 +12,6 @@ $blue-light: #738383;
 $popup-focus: #fff;
 $popup: #777;
 
-* {
-  margin: 0;
-  padding: 0;
-  &:focus {
-    outline: none;
-  }
-  &:active {
-    outline: none;
-  }
-}
-
 button {
   border: none;
   margin: 0;
@@ -35,10 +24,21 @@ button {
   line-height: normal;
   -webkit-font-smoothing: inherit;
   -moz-osx-font-smoothing: inherit;
-  -webkit-appearance: none;
-  ::-moz-focus-inner {
+    -webkit-appearance: none;
+  &::-moz-focus-inner {
     border: 0;
     padding: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+  &:active {
+    outline: none;
   }
 }
 
@@ -170,7 +170,7 @@ h1 {
   }
 }
 
-section {
+.about {
   background: $tan-dark;
   color: $blue-light;
   max-width: 75rem;
@@ -197,13 +197,13 @@ p {
   color: $tan-light;
 }
 
-section img {
+.about img {
   width: 22rem;
   float: right;
   shape-outside: url(images/elsa.png);
 }
 
-article {
+.galleries {
   display: grid;
   grid: auto / repeat(8, 1fr); 
   grid-gap: 1vw;
@@ -227,6 +227,11 @@ h3{
   grid-column: 8;
   grid-row: 2 / span 6;
   transition: opacity .5s;
+}
+
+img {
+  width: 100%;
+  transition: opacity 1s;
 }
 
 a{
@@ -255,64 +260,19 @@ a{
   grid-row: span 5;
 }
 
-img {
-  width: 100%;
-  transition: opacity 1s;
-}
-
-.img1{
+.img1, .img5, .img9, {
   clip-path: $cp1;
 }
 
-.img2{
+.img2, .img6, .img10 {
   clip-path: $cp2;
 }
 
-.img3{
+.img3, .img7, .img11, .img13 {
   clip-path: $cp3;
 }
 
-.img4{
-  clip-path: $cp4;
-}
-
-.img5{
-  clip-path: $cp1;
-}
-
-.img6{
-  clip-path: $cp2;
-}
-
-.img7{
-  clip-path: $cp3;
-}
-
-.img8{
-  clip-path: $cp4;
-}
-
-.img9{
-  clip-path: $cp1;
-}
-
-.img10{
-  clip-path: $cp2;
-}
-
-.img11{
-  clip-path: $cp3;
-}
-
-.img12{
-  clip-path: $cp4;
-}
-
-.img13{
-  clip-path: $cp3;
-}
-
-.img14{
+.img4, .img8, .img12, .img14 {
   clip-path: $cp4;
 }
 
@@ -325,22 +285,83 @@ nav {
 }
 
 .btn {
-  height: 4rem;
-  width: 11rem;
-  font-size: 2rem;
-  margin: .5rem;
-  background: $blue-dark;
-  color: $tan-light;
   border-radius: 15px;
   border: 3px solid $tan-light;
+  margin: .5rem;
+  padding: 0;
+  width: 11rem;
+  height: 4rem;
+  font-size: 2rem;
+  background: $blue-dark;
+  color: $tan-light;
   cursor: pointer;
   &:hover, &:focus {
     background: $blue;
   }
 }
 
+.contact {
+  h2 {
+    margin-left: 1rem;
+  }
+}
+
+form {
+  width: 75vw;
+  max-width: 400px;
+  margin: 3rem auto;
+}
+
+label {
+  font-size: 2rem;
+  color: $tan-light;
+}
+
+input, textarea {
+  width: calc(100% - 2rem);
+  font-size: 2rem;
+  border-radius: 50px;
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  &:focus {
+    background: $tan-light;
+  }
+}
+
+textarea {
+  border-radius: 25px;
+  height: 12rem;
+}
+
 .hidden {
   display: none;
+}
+
+.sent {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4rem;
+  p{
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 7rem;
+  }
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 5rem;
+    color: $tan-dark;
+    &:hover, &:focus {
+      color: $tan;
+    }
+  }
+}
+
+footer {
+  height: 10vh;
+  background: $tan;
+  border-radius: 50px 50px 0 0;
+  border-top: solid $tan-dark 5px;
 }
 
 @media screen and (min-width: 750px) {

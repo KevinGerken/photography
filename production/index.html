@@ -29,13 +29,13 @@
     </div>
   </div>
   <main>
-    <section>
+    <section class="about">
       <h2>
-        About 
-      </h2>
-      <br>
-      <h2 class="vert left">
-        Elsa
+        About
+        <br>
+        <span class="vert left">    
+          Elsa
+        </span>
       </h2>
       <p>Soufflé jelly-o caramels carrot cake cheesecake gingerbread sugar plum dessert pudding. Pastry pie sweet liquorice liquorice. Fruitcake cupcake bonbon.</p>
       <p>Lollipop cake dragée marzipan soufflé apple pie donut chocolate cake. Sesame snaps ice cream bear claw. Jelly beans powder carrot cake.</p>
@@ -44,7 +44,7 @@
       <p>Sweet marzipan chupa chups cake bonbon jelly-o pie. Dessert sweet roll jujubes icing. Tootsie roll bear claw gummies lemon drops jelly pudding sweet chocolate bar.</p>
       <p>Marshmallow marzipan donut chocolate bar soufflé toffee. Icing fruitcake macaroon pie candy apple pie. Icing halvah pudding candy pudding topping bonbon. Macaroon topping marshmallow.</p>   
     </section>
-    <article>
+    <section class="galleries">
       <h2>Galleries</h2>
       <h3 class="vert">Weddings</h3>
       <a href="images/01.jpg" class="large">
@@ -103,12 +103,31 @@
           Families
         </button>
       </nav>
-    </article>
-    <div>
+    </section>
+    <section class="contact">
       <h2>
         Contact
       </h2>
-    </div>
+      <form method="post" name="contact-form" action="contact-form-handler.php">
+        <label>
+          Your name:
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>
+          Your Email:
+          <input type="text" name="email" autocomplete="email" required>
+        </label>
+        <label>
+          Your Message:
+          <textarea name="message" required></textarea>
+        </label>
+        <button class="btn">
+          Submit
+        </button>
+      </form>
+    </section>
   </main>
+  <footer>
+  </footer>
 </body>
 </html>
